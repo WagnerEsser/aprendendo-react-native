@@ -1,70 +1,72 @@
 import React, { useState } from "react";
-import { Slider } from "react-native";
+import Slider from "@react-native-community/slider";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import styled from "styled-components";
 import { ChevronIcon } from "../../assets/icons/Chevron";
 import { MoreVertIcon } from "../../assets/icons/MoreVert";
 import { LinearGradient } from "expo-linear-gradient";
 import { PlayIcon } from "../../assets/icons/Play";
 
-const Background = styled.View`
+const Background = styled(View)`
   flex: 1;
   background-color: gray;
 `;
 
-const TopBar = styled.View`
+const TopBar = styled(View)`
   display: flex;
   flex-direction: row;
-  padding-top: 50px;
+  padding-top: 20px;
 `;
-TopBar.Left = styled.View`
+TopBar.Left = styled(View)`
   flex: 1;
   padding-left: 25px;
   padding-top: 10px;
 `;
-TopBar.Middle = styled.View`
+TopBar.Middle = styled(View)`
   display: flex;
   flex: 3;
 `;
-TopBar.Right = styled.View`
+TopBar.Right = styled(View)`
   flex: 1;
   align-items: flex-end;
   padding-right: 25px;
   padding-top: 10px;
 `;
-TopBar.Title = styled.Text`
+TopBar.Title = styled(Text)`
   color: white;
   text-align: center;
   font-size: 15px;
   text-transform: uppercase;
 `;
-TopBar.Subtitle = styled.Text`
+TopBar.Subtitle = styled(Text)`
   color: white;
   text-align: center;
   font-weight: 700;
 `;
 
-const ScreenArea = styled.View`
+const ScreenArea = styled(View)`
   flex: 1;
   padding: 32px;
 `;
 
-const CoverArea = styled.View`
+const CoverArea = styled(View)`
   flex: 4;
 `;
-CoverArea.Image = styled.Image`
+CoverArea.Image = styled(Image)`
   width: 100%;
   flex: 1;
 `;
 
-const InfoArea = styled.View`
+const InfoArea = styled(View)`
   flex: 1;
 `;
-InfoArea.Title = styled.Text`
+InfoArea.Title = styled(Text)`
   color: white;
   font-size: 18px;
   font-weight: bold;
+  margin-top: 15px;
 `;
-InfoArea.Subtitle = styled.Text`
+InfoArea.Subtitle = styled(Text)`
   color: white;
   color: #83828e;
   font-size: 14px;
@@ -72,25 +74,26 @@ InfoArea.Subtitle = styled.Text`
   margin-top: 3px;
 `;
 
-const ControlsArea = styled.View`
+const ControlsArea = styled(View)`
   flex: 2;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 `;
-ControlsArea.Play = styled.TouchableOpacity``;
+ControlsArea.Play = styled(TouchableOpacity)``;
 
-ControlsArea.Slider = styled.View`
+ControlsArea.Slider = styled(View)`
   flex-basis: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 `;
-ControlsArea.Slider.CurrentTime = styled.Text`
+ControlsArea.Slider.CurrentTime = styled(Text)`
   color: #bbb;
 `;
-ControlsArea.Slider.TotalTime = styled.Text`
+ControlsArea.Slider.TotalTime = styled(Text)`
   color: #bbb;
 `;
 
