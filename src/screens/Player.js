@@ -6,6 +6,8 @@ import { ChevronIcon } from "../../assets/icons/Chevron";
 import { MoreVertIcon } from "../../assets/icons/MoreVert";
 import { LinearGradient } from "expo-linear-gradient";
 import { PlayIcon } from "../../assets/icons/Play";
+import { FontAwesome } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 const Background = styled(View)`
   flex: 1;
@@ -82,8 +84,6 @@ const ControlsArea = styled(View)`
   justify-content: center;
   margin-top: 10px;
 `;
-ControlsArea.Play = styled(TouchableOpacity)``;
-
 ControlsArea.Slider = styled(View)`
   flex-basis: 100%;
   flex-direction: row;
@@ -102,12 +102,12 @@ const AudioSlider = styled(Slider)`
 `;
 
 export default function Player() {
-  const [time, setTime] = useState(0)
+  const [time, setTime] = useState(0);
 
-  const onChangeTime = value => {
-    setTime(value)
-  }
- 
+  const onChangeTime = (value) => {
+    setTime(value);
+  };
+
   return (
     <Background>
       <LinearGradient colors={["#200666", "#161616"]} style={{ flex: 1 }}>
@@ -127,10 +127,7 @@ export default function Player() {
           <CoverArea>
             <CoverArea.Image
               resizeMode='contain'
-              source={{
-                uri:
-                  "https://i.pinimg.com/originals/46/ff/73/46ff73e6757632092d3bc7c2f826816d.jpg",
-              }}
+              source={require("../../assets/acdc.jpeg")}
             ></CoverArea.Image>
           </CoverArea>
           <InfoArea>
@@ -155,9 +152,41 @@ export default function Player() {
                 03:30
               </ControlsArea.Slider.TotalTime>
             </ControlsArea.Slider>
-            <ControlsArea.Play>
+            <TouchableOpacity>
+              <FontAwesome
+                name='random'
+                size={24}
+                color='white'
+                style={{ marginRight: 35 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <FontAwesome
+                name='step-backward'
+                size={30}
+                color='white'
+                style={{ marginRight: 20 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
               <PlayIcon width={90} height={90} />
-            </ControlsArea.Play>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <FontAwesome
+                name='step-forward'
+                size={30}
+                color='white'
+                style={{ marginLeft: 20 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Feather
+                name='repeat'
+                size={24}
+                color='white'
+                style={{ marginLeft: 35 }}
+              />
+            </TouchableOpacity>
           </ControlsArea>
         </ScreenArea>
       </LinearGradient>
