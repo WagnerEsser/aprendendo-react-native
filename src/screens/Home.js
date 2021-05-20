@@ -1,16 +1,5 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
-import styled from "styled-components";
-
-const defaultStyle = {
-  justifyContent: "center",
-  alignItems: "center",
-  flex: 1,
-};
-
-const ButtonWrapper = styled(View)`
-  margin-top: 15px;
-`;
+import { View, Text, Button, StyleSheet } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
   const onPress = () => {
@@ -18,13 +7,24 @@ const HomeScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={defaultStyle}>
+    <View style={styles.wrapper}>
       <Text>Hello World!</Text>
-      <ButtonWrapper>
+      <View style={styles.button}>
         <Button title='Spotify player' onPress={onPress} />
-      </ButtonWrapper>
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  wrapper: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+  },
+  button: {
+    marginTop: 15,
+  },
+});
 
 export default HomeScreen;
