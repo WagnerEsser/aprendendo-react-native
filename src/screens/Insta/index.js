@@ -116,7 +116,7 @@ const InstaScreen = () => (
 );
 
 const styles = StyleSheet.create({
-  safeArea: { marginTop: 20, marginBottom: 70 },
+  safeArea: { marginBottom: 70, backgroundColor: 'white' },
   tag: { color: "#4e5153" },
 });
 
