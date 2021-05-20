@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import Slider from "@react-native-community/slider";
 import { View, Text, Image } from "react-native";
-import { Flex, FlexView } from "../default-styles";
+import { Flex, FlexView, FlexRowView } from "../default-styles";
 
 export const Background = styled(Flex)`
   background-color: gray;
 `;
 
-export const TopBar = styled(FlexView)`
-  flex-direction: row;
+export const TopBar = styled(FlexRowView)`
   padding-top: 20px;
 `;
 TopBar.Left = styled(Flex)`

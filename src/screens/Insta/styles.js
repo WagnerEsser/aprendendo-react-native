@@ -1,9 +1,8 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import styled from "styled-components";
-import { Flex, FlexView } from "../default-styles";
+import { Flex, FlexRowView } from "../default-styles";
 
-export const Top = styled(FlexView)`
-  flex-direction: row;
+export const Top = styled(FlexRowView)`
   align-items: center;
   justify-content: space-between;
   padding-right: 5px;
@@ -11,6 +10,7 @@ export const Top = styled(FlexView)`
 
 export const CardWrapper = styled(Flex)`
   justify-content: center;
+  margin-bottom: 15px;
 `;
 
 export const ImageSmall = styled(Image)`
@@ -31,9 +31,8 @@ export const Logo = styled(Image)`
   margin-left: 15px;
 `;
 
-export const TopWrapper = styled(FlexView)`
+export const TopWrapper = styled(FlexRowView)`
   flex: 1;
-  flex-direction: row;
   justify-content: space-between;
 `;
 
@@ -57,12 +56,25 @@ export const IconWrapper = styled(TouchableOpacity)`
   margin-right: 10px;
 `;
 
-export const BookmarkIconWrapper = styled(IconWrapper)`
-  flex: 1;
-  flex-direction: row-reverse;
+export const WrapperIconsBottomImage = styled(FlexRowView)`
+  padding: 10px 10px 5px 10px;
+  justify-content: space-between;
 `;
 
-export const WrapperIconsBottomImage = styled(FlexView)`
-  flex-direction: row;
-  padding: 10px;
+export const Likes = styled(Text)`
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 10px;
+  margin-bottom: 5px;
+`;
+
+export const Description = styled(Text)`
+  font-size: 12px;
+  margin-left: 10px;
+`;
+
+export const HashtagsWrapper = styled(Text)`
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
 `;
