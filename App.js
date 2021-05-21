@@ -6,21 +6,33 @@ import TabsScreen from "./src/screens/Tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-const HomeStack = createStackNavigator();
-
-const HomeTabStack = () => (
-  <HomeStack.Navigator>
-    <HomeStack.Screen name='Página inicial' component={HomeScreen} />
-    <HomeStack.Screen name='Spotify Player' component={PlayerScreen} />
-    <HomeStack.Screen name='Instagram' component={InstaScreen} />
-    <HomeStack.Screen name='Tabs' component={TabsScreen} />
-  </HomeStack.Navigator>
-);
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <HomeTabStack />
-    </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="home">
+                <Stack.Screen
+                    name="home"
+                    component={HomeScreen}
+                    options={{ title: "Página inicial" }}
+                />
+                <Stack.Screen
+                    name="spotify"
+                    component={PlayerScreen}
+                    options={{ title: "Spotify Player" }}
+                />
+                <Stack.Screen
+                    name="instagram"
+                    component={InstaScreen}
+                    options={{ title: "Instagram" }}
+                />
+                <Stack.Screen
+                    name="tabs"
+                    component={TabsScreen}
+                    options={{ title: "Tabs" }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
