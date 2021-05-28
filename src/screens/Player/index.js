@@ -7,7 +7,6 @@ import { PlayIcon } from "../../../assets/icons/Play";
 import { FontAwesome } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import {
-    Background,
     TopBar,
     ScreenArea,
     CoverArea,
@@ -15,8 +14,16 @@ import {
     ControlsArea,
     AudioSlider,
 } from "./styles";
+import { Flex } from "../default-styles";
+import {
+    BLACK_LIGHT,
+    DARK_BLUE,
+    PLAYER_CIRCLE,
+    SECONDARY_COLOR,
+    WHITE,
+} from "../colors";
 
-const gradientColors = ["#200666", "#161616"];
+const gradientColors = [DARK_BLUE, BLACK_LIGHT];
 
 const Player = () => {
     const [time, setTime] = useState(0);
@@ -26,7 +33,7 @@ const Player = () => {
     };
 
     return (
-        <Background>
+        <Flex>
             <LinearGradient
                 colors={gradientColors}
                 style={styles.linearGradient}
@@ -57,9 +64,9 @@ const Player = () => {
                     <ControlsArea>
                         <ControlsArea.Slider>
                             <AudioSlider
-                                thumbTintColor="#fff"
-                                maximumTrackTintColor="#777"
-                                minimumTrackTintColor="#1dd65f"
+                                thumbTintColor={WHITE}
+                                maximumTrackTintColor={SECONDARY_COLOR}
+                                minimumTrackTintColor={PLAYER_CIRCLE}
                                 minimumValue={0}
                                 maximumValue={100}
                                 value={time}
@@ -76,7 +83,7 @@ const Player = () => {
                             <FontAwesome
                                 name="random"
                                 size={24}
-                                color="white"
+                                color={WHITE}
                                 style={styles.randomIcon}
                             />
                         </TouchableOpacity>
@@ -84,7 +91,7 @@ const Player = () => {
                             <FontAwesome
                                 name="step-backward"
                                 size={30}
-                                color="white"
+                                color={WHITE}
                                 style={styles.stepBackwardIcon}
                             />
                         </TouchableOpacity>
@@ -95,7 +102,7 @@ const Player = () => {
                             <FontAwesome
                                 name="step-forward"
                                 size={30}
-                                color="white"
+                                color={WHITE}
                                 style={styles.stepForwardIcon}
                             />
                         </TouchableOpacity>
@@ -103,14 +110,14 @@ const Player = () => {
                             <Feather
                                 name="repeat"
                                 size={24}
-                                color="white"
+                                color={WHITE}
                                 style={styles.repeatIcon}
                             />
                         </TouchableOpacity>
                     </ControlsArea>
                 </ScreenArea>
             </LinearGradient>
-        </Background>
+        </Flex>
     );
 };
 

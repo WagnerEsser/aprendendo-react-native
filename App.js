@@ -3,6 +3,7 @@ import PlayerScreen from "./src/screens/Player";
 import HomeScreen from "./src/screens/Home";
 import InstaScreen from "./src/screens/Insta";
 import TabsScreen from "./src/screens/Tabs";
+import LoginScreen from "./src/screens/Login";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -31,6 +32,11 @@ export default function App() {
                     name="tabs"
                     component={TabsScreen}
                     options={{ title: "Tabs" }}
+                />
+                <Stack.Screen
+                    name="login"
+                    component={LoginScreen}
+                    options={{ title: "Login" }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

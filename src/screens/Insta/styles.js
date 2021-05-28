@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import styled from "styled-components";
 import { Flex, FlexRowView } from "../default-styles";
+import { BLACK } from "../colors";
 
 export const Top = styled(FlexRowView)`
     align-items: center;
@@ -45,7 +46,7 @@ export const CardTop = styled(View)`
 export const Author = styled(Text)`
     font-size: 14px;
     font-weight: bold;
-    color: black;
+    color: ${BLACK};
 `;
 
 export const Place = styled(Text)`

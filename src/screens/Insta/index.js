@@ -30,6 +30,7 @@ import {
     TopWrapper,
 } from "./styles";
 import { Flex, FlexView, FlexRowView } from "../default-styles";
+import { BLACK, HEART, SECONDARY_COLOR, WHITE } from "../colors";
 
 const Card = ({ values }) => {
     const { author, tagPictureUrl, place, likes, description, hashtags } =
@@ -52,7 +53,7 @@ const Card = ({ values }) => {
                     <Ionicons
                         name="ellipsis-vertical"
                         size={20}
-                        color="black"
+                        color={BLACK}
                     />
                 </TopWrapper>
             </CardTop>
@@ -66,27 +67,27 @@ const Card = ({ values }) => {
                             <Ionicons
                                 name="ios-heart"
                                 size={24}
-                                color="#ce090b"
+                                color={HEART}
                             />
                         )}
                         {!heart && (
                             <Ionicons
                                 name="ios-heart-outline"
                                 size={24}
-                                color="black"
+                                color={BLACK}
                             />
                         )}
                     </IconWrapper>
                     <IconWrapper>
-                        <FontAwesome name="comment-o" size={20} color="black" />
+                        <FontAwesome name="comment-o" size={20} color={BLACK} />
                     </IconWrapper>
                     <IconWrapper>
-                        <Feather name="send" size={20} color="black" />
+                        <Feather name="send" size={20} color={BLACK} />
                     </IconWrapper>
                 </FlexRowView>
                 <FlexView>
                     <IconWrapper>
-                        <Feather name="bookmark" size={24} color="black" />
+                        <Feather name="bookmark" size={24} color={BLACK} />
                     </IconWrapper>
                 </FlexView>
             </WrapperIconsBottomImage>
@@ -114,13 +115,13 @@ const InstaScreen = () => (
                 <Logo source={require("../../../assets/instagram.png")} />
             </Flex>
             <IconWrapper>
-                <AntDesign name="plussquareo" size={24} color="black" />
+                <AntDesign name="plussquareo" size={24} color={BLACK} />
             </IconWrapper>
             <IconWrapper>
-                <Ionicons name="ios-heart-outline" size={24} color="black" />
+                <Ionicons name="ios-heart-outline" size={24} color={BLACK} />
             </IconWrapper>
             <IconWrapper>
-                <Fontisto name="messenger" size={24} color="black" />
+                <Fontisto name="messenger" size={24} color={BLACK} />
             </IconWrapper>
         </Top>
         <FlatList
@@ -132,8 +133,8 @@ const InstaScreen = () => (
 );
 
 const styles = StyleSheet.create({
-    safeArea: { marginBottom: 70, backgroundColor: "white" },
-    tag: { color: "#4e5153" },
+    safeArea: { marginBottom: 70, backgroundColor: WHITE },
+    tag: { color: SECONDARY_COLOR },
 });
 
 export default InstaScreen;

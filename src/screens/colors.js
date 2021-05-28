@@ -1,0 +1,9 @@
+export const BUTTON = "#2196f3";
+export const BLACK = "#000";
+export const BLACK_LIGHT = "#161616";
+export const WHITE = "#fff";
+export const BORDER = "#b5b2b7";
+export const SECONDARY_COLOR = "#83828e";
+export const HEART = "#ce090b";
+export const DARK_BLUE = "#200666";
+export const PLAYER_CIRCLE = "#1dd65f";

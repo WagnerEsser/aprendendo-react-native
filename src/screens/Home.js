@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import Button from "../components/Button";
 
 const HomeScreen = ({ navigation }) => {
     const onPress = (url) => () => {
@@ -9,14 +10,17 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.wrapper}>
             <Text>Hello World!</Text>
-            <View style={styles.button}>
-                <Button title="Spotify player" onPress={onPress("spotify")} />
+            <View style={styles.buttonWrapper}>
+                <Button title="Spotify Player" onPress={onPress("spotify")} />
             </View>
-            <View style={styles.button}>
+            <View style={styles.buttonWrapper}>
                 <Button title="Instagram" onPress={onPress("instagram")} />
             </View>
-            <View style={styles.button}>
+            <View style={styles.buttonWrapper}>
                 <Button title="Tabs" onPress={onPress("tabs")} />
+            </View>
+            <View style={styles.buttonWrapper}>
+                <Button title="Login" onPress={onPress("login")} />
             </View>
         </View>
     );
@@ -28,7 +32,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         flex: 1,
     },
-    button: {
+    buttonWrapper: {
         marginTop: 15,
         minWidth: 200,
     },

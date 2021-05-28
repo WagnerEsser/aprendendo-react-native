@@ -2,10 +2,7 @@ import styled from "styled-components";
 import Slider from "@react-native-community/slider";
 import { View, Text, Image } from "react-native";
 import { Flex, FlexView, FlexRowView } from "../default-styles";
-
-export const Background = styled(Flex)`
-    background-color: gray;
-`;
+import { SECONDARY_COLOR, WHITE } from "../colors";
 
 export const TopBar = styled(FlexRowView)`
     padding-top: 20px;
@@ -23,13 +20,13 @@ TopBar.Right = styled(Flex)`
     padding-top: 10px;
 `;
 TopBar.Title = styled(Text)`
-    color: white;
+    color: ${WHITE};
     text-align: center;
     font-size: 15px;
     text-transform: uppercase;
 `;
 TopBar.Subtitle = styled(Text)`
-    color: white;
+    color: ${WHITE};
     text-align: center;
     font-weight: 700;
 `;
@@ -49,14 +46,14 @@ CoverArea.Image = styled(Image)`
 export const InfoArea = styled(Flex)``;
 
 InfoArea.Title = styled(Text)`
-    color: white;
+    color: ${WHITE};
     font-size: 18px;
     font-weight: bold;
     margin-top: 15px;
 `;
 InfoArea.Subtitle = styled(Text)`
-    color: white;
-    color: #83828e;
+    color: ${WHITE};
+    color: ${SECONDARY_COLOR};
     font-size: 14px;
     font-weight: 600;
     margin-top: 3px;
@@ -77,10 +74,10 @@ ControlsArea.Slider = styled(View)`
     justify-content: space-between;
 `;
 ControlsArea.Slider.CurrentTime = styled(Text)`
-    color: #bbb;
+    color: ${SECONDARY_COLOR};
 `;
 ControlsArea.Slider.TotalTime = styled(Text)`
-    color: #bbb;
+    color: ${SECONDARY_COLOR};
 `;
 
 export const AudioSlider = styled(Slider)`
