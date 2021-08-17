@@ -22,6 +22,9 @@ const HomeScreen = ({ navigation }) => {
             <View style={styles.buttonWrapper}>
                 <Button title="Login" onPress={onPress("login")} />
             </View>
+            <View style={styles.buttonWrapper}>
+                <Button title="Cadastre-se" onPress={onPress("register")} />
+            </View>
         </View>
     );
 };
